@@ -33,12 +33,6 @@ One sentence.
 - unified diff patch or NO_PATCH
 ```
 
-Other templates:
-
-- `bugfix.md`
-- `refactor.md`
-- `docs_only.md`
-- `agent_smoke.md`
 
 AGENTS.md template:
 
