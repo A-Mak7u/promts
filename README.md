@@ -40,6 +40,13 @@ One sentence.
 - unified diff patch or NO_PATCH
 ```
 
+Other templates:
+
+- `bugfix.md`
+- `refactor.md`
+- `docs_only.md`
+- `agent_smoke.md`
+
 AGENTS.md template:
 
 ```md
@@ -72,6 +79,75 @@ Produce:
 
 Then create one task file per atomic task.
 Use the local-model workflow from https://github.com/A-Mak7u/promts.
+```
+
+Bugfix prompt:
+
+```text
+Fix this bug with the smallest safe change.
+
+Before editing:
+- identify the exact failing behavior
+- find the smallest file scope
+- state the regression risk
+
+Constraints:
+- do not refactor unrelated code
+- do not broaden scope
+- preserve existing behavior outside the bug
+
+Output:
+- one small patch
+- or NO_PATCH if the fix is unsafe without more context
+```
+
+Refactor prompt:
+
+```text
+Refactor only what is necessary to improve clarity or maintainability.
+
+Constraints:
+- keep behavior unchanged
+- keep file scope narrow
+- prefer mechanical changes over redesign
+
+Output:
+- unified diff patch only
+- or NO_PATCH if behavior cannot be preserved confidently
+```
+
+Docs-only prompt:
+
+```text
+Update documentation only.
+
+Constraints:
+- do not modify runtime code unless absolutely required
+- keep the wording concise
+- preserve existing structure and terminology
+
+Output:
+- unified diff patch only
+- or NO_PATCH if the docs change needs code changes first
+```
+
+Agent smoke prompt:
+
+```text
+Perform a minimal smoke test for the local agent workflow.
+
+Goal:
+- create or modify one file
+- confirm the file exists after the change
+
+Constraints:
+- touch as little as possible
+- report any missing capability clearly
+
+Output:
+- a short summary
+- exact file path
+- pass/fail result
 ```
 
 Old project prompt:
