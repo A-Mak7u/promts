@@ -56,3 +56,38 @@ Rules:
 - Do not send the whole repo to the local model.
 - Preserve existing style and behavior unless the task says otherwise.
 ```
+
+New project prompt:
+
+```text
+Inspect this repository as a senior engineer.
+
+Produce:
+- a short project map
+- the build/test command
+- entrypoints
+- conventions
+- risks
+- a small task plan split into atomic tasks
+
+Then create one task file per atomic task.
+Use the local-model workflow from https://github.com/A-Mak7u/promts.
+```
+
+Old project prompt:
+
+```text
+Inspect this existing repository carefully.
+
+Focus on:
+- current git status
+- repo layout
+- tests
+- entrypoints
+- local conventions
+- hidden risks from old code
+
+Do not refactor broadly.
+Split work into small tasks only.
+Use the local-model workflow from https://github.com/A-Mak7u/promts.
+```
