@@ -39,3 +39,20 @@ One sentence.
 ## Expected output
 - unified diff patch or NO_PATCH
 ```
+
+AGENTS.md template:
+
+```md
+Use the prompt templates from:
+https://github.com/A-Mak7u/promts
+
+Workflow:
+- Codex makes the plan.
+- Local model executes one atomic task at a time.
+- Review each diff before moving on.
+
+Rules:
+- Keep tasks small.
+- Do not send the whole repo to the local model.
+- Preserve existing style and behavior unless the task says otherwise.
+```
