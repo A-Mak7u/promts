@@ -1,13 +1,6 @@
-# promts
-
-Run the local agent from inside the project you want to edit:
-
 ```bash
 /home/maks/Documents/llms2/promts/launch_local_agent.sh
 ```
-
-Use another model if needed:
-
 ```bash
 /home/maks/Documents/llms2/promts/launch_local_agent.sh ollama_chat/qwen2.5-coder:7b
 ```
